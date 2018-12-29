@@ -33,10 +33,14 @@ class App extends React.Component {
     this.setState({ counters });
   };
 
+  handleTotalCount = () => {
+    return this.state.counters.reduce((sum, current) => sum + current.value, 0);
+  };
+
   render() {
     return (
       <React.Fragment>
-        <NavBar totalCounters={this.state.counters.length} />
+        <NavBar totalCounters={this.handleTotalCount()} />
         <main className="container">
           <Counters
             counters={this.state.counters}

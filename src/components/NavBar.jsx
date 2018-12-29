@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 
-const NavBar = props => {
+const NavBar = ({ totalCounters }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a>
-          Navbar
-          <span className="badge badge-pill badge-secondary">
-            {props.totalCounters}
+        <h2>
+          Shopping cart
+          <span
+            style={{ marginLeft: 10 }}
+            className="badge badge-pill badge-secondary"
+          >
+            {totalCounters}
           </span>
-        </a>
+        </h2>
       </div>
     </nav>
   );
